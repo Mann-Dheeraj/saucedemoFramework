@@ -1,16 +1,15 @@
 package com.mannautomation.test;
-
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
-import com.mannautomation.base.BaseTest;
-public class LoginTest extends BaseTest {
+import com.mannautomation.uicomponents.*;
+public class LoginTest extends LoginPageFunctionality {
 	
 	@Test
 	public void loginWithEmailAndPassword() {
-		driver.get("https://www.saucedemo.com/");
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-		driver.findElement(By.id("login-button")).click();
+		String usernameOfCustomer = "standard_user";
+		String passwordOfCustomer = "secret_sauce";
+		
+		navigateToLoginPage();
+		loginWithEmailAndPassword(usernameOfCustomer,passwordOfCustomer);
+		
 	}
 }

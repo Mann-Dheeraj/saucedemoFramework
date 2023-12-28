@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-28T15:04:57 AEDT" name="Default suite" finished-at="2023-12-28T15:05:00 AEDT" duration-ms="2708">
+  <suite started-at="2023-12-28T16:08:06 AEDT" name="Default suite" finished-at="2023-12-28T16:08:15 AEDT" duration-ms="8652">
     <groups>
     </groups>
-    <test started-at="2023-12-28T15:04:57 AEDT" name="Default test" finished-at="2023-12-28T15:05:00 AEDT" duration-ms="2708">
+    <test started-at="2023-12-28T16:08:06 AEDT" name="Default test" finished-at="2023-12-28T16:08:15 AEDT" duration-ms="8652">
       <class name="com.mannautomation.test.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.mannautomation.test.LoginTest@1ddf84b8]" started-at="2023-12-28T15:04:57 AEDT" name="setUp" finished-at="2023-12-28T15:04:59 AEDT" duration-ms="1808" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.mannautomation.test.LoginTest@5e82df6a]" started-at="2023-12-28T16:08:06 AEDT" name="setUp" finished-at="2023-12-28T16:08:08 AEDT" duration-ms="1436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginWithEmailAndPassword()[pri:0, instance:com.mannautomation.test.LoginTest@1ddf84b8]" started-at="2023-12-28T15:04:59 AEDT" name="loginWithEmailAndPassword" finished-at="2023-12-28T15:05:00 AEDT" duration-ms="870" status="PASS">
+        <test-method signature="loginWithEmailAndPassword()[pri:0, instance:com.mannautomation.test.LoginTest@5e82df6a]" started-at="2023-12-28T16:08:08 AEDT" name="loginWithEmailAndPassword" finished-at="2023-12-28T16:08:15 AEDT" duration-ms="7191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithEmailAndPassword -->

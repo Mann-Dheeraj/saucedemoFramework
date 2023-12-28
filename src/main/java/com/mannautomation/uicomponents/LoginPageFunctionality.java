@@ -10,6 +10,7 @@ public class LoginPageFunctionality extends BaseTest{
 	private String loginBUTTON = "login-button";
 	
 	public void navigateToLoginPage() {
+		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
 	}
 	

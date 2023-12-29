@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mannautomation.test.LoginTest">
+      <class name="com.mannautomation.test.HomePageClickOnItemWithMaxPrice">
         <methods>
           <include name="setUp"/>
-          <include name="loginWithEmailAndPassword"/>
+          <include name="findItemWithMaxPrice"/>
         </methods>
-      </class> <!-- com.mannautomation.test.LoginTest -->
+      </class> <!-- com.mannautomation.test.HomePageClickOnItemWithMaxPrice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

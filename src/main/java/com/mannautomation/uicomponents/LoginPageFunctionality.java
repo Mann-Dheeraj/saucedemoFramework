@@ -1,9 +1,12 @@
 package com.mannautomation.uicomponents;
+import com.mannautomation.utility.*;
+
+import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.mannautomation.base.BaseTest;
+import com.mannautomation.utility.Utility;
 
 public class LoginPageFunctionality {
 	WebDriver driver;
@@ -11,9 +14,12 @@ public class LoginPageFunctionality {
 	private String passwordIdTEXTFIELD = "password";
 	private String loginBUTTON = "login-button";
 
-	public void navigateToLoginPage(WebDriver driver) {
+	public void navigateToLoginPage(WebDriver driver) throws IOException {
 		driver.manage().window().maximize();
-		driver.get("https://www.saucedemo.com/");
+		
+		String navigateToUrl = Utility.fetchPropertyValue("url").toString();
+		
+		driver.get(navigateToUrl);
 	}
 
 	public void loginWithEmailAndPassword(WebDriver driver,String username, String password) {

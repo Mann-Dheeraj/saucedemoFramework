@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-07T13:59:20 AEDT" name="Default suite" finished-at="2024-01-07T13:59:22 AEDT" duration-ms="1718">
+  <suite started-at="2024-01-09T21:51:58 AEDT" name="Suite" finished-at="2024-01-09T21:52:09 AEDT" duration-ms="10293">
     <groups>
     </groups>
-    <test started-at="2024-01-07T13:59:20 AEDT" name="Default test" finished-at="2024-01-07T13:59:22 AEDT" duration-ms="1718">
-      <class name="com.mannautomation.test.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.mannautomation.test.LoginTest@39529185]" started-at="2024-01-07T13:59:20 AEDT" name="setUp" finished-at="2024-01-07T13:59:22 AEDT" duration-ms="1675" status="PASS">
+    <test started-at="2024-01-09T21:51:58 AEDT" name="Test" finished-at="2024-01-09T21:52:09 AEDT" duration-ms="10293">
+      <class name="com.mannautomation.test.HomePageClickOnItemWithMaxPrice">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.mannautomation.test.HomePageClickOnItemWithMaxPrice@3daa422a]" started-at="2024-01-09T21:51:58 AEDT" name="setUp" finished-at="2024-01-09T21:52:02 AEDT" duration-ms="3583" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginWithEmailAndPassword()[pri:0, instance:com.mannautomation.test.LoginTest@39529185]" started-at="2024-01-07T13:59:22 AEDT" name="loginWithEmailAndPassword" finished-at="2024-01-07T13:59:22 AEDT" duration-ms="7" status="FAIL">
-          <exception class="java.lang.Error">
+        <test-method signature="findItemWithMaxPrice()[pri:0, instance:com.mannautomation.test.HomePageClickOnItemWithMaxPrice@3daa422a]" started-at="2024-01-09T21:52:02 AEDT" name="findItemWithMaxPrice" finished-at="2024-01-09T21:52:06 AEDT" duration-ms="4080" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findItemWithMaxPrice -->
+      </class> <!-- com.mannautomation.test.HomePageClickOnItemWithMaxPrice -->
+      <class name="com.mannautomation.test.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.mannautomation.test.LoginTest@6c80d78a]" started-at="2024-01-09T21:52:06 AEDT" name="setUp" finished-at="2024-01-09T21:52:07 AEDT" duration-ms="980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithEmailAndPassword()[pri:0, instance:com.mannautomation.test.LoginTest@6c80d78a]" started-at="2024-01-09T21:52:07 AEDT" name="loginWithEmailAndPassword" finished-at="2024-01-09T21:52:09 AEDT" duration-ms="1607" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unresolved compilation problem: 
-Unhandled exception type IOException
-]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problem: 
-Unhandled exception type IOException
-
-at com.mannautomation.test.LoginTest.loginWithEmailAndPassword(LoginTest.java:17)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:819)
+at org.testng.Assert.assertEquals(Assert.java:829)
+at com.mannautomation.test.LoginTest.loginWithEmailAndPassword(LoginTest.java:24)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -53,11 +65,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithEmailAndPassword -->
       </class> <!-- com.mannautomation.test.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -1,4 +1,6 @@
 package com.mannautomation.test;
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -18,6 +20,8 @@ public class LoginTest extends BaseTest {
 
 		lpf.navigateToLoginPage(driver);
 		lpf.loginWithEmailAndPassword(driver,usernameOfCustomer,passwordOfCustomer);
-
+		boolean iSUrlCorrect= lpf.AssertLoginPageUrl("https://www.saucedemo.com/", driver);
+		assertEquals(iSUrlCorrect, true);
 	}
+	
 }

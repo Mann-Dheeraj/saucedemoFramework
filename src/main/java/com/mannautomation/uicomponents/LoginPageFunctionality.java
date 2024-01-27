@@ -8,7 +8,13 @@ import org.openqa.selenium.WebDriver;
 import com.mannautomation.utility.Utility;
 
 public class LoginPageFunctionality {
+	
 	WebDriver driver;
+	
+	public LoginPageFunctionality(WebDriver driver) {
+		this.driver = driver;
+	}
+	
 	
 	private String emailIdTEXTFIELD = "user-name";
 	private String passwordIdTEXTFIELD = "password";

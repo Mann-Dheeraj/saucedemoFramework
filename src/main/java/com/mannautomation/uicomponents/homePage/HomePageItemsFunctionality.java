@@ -11,6 +11,10 @@ import org.openqa.selenium.WebElement;
 public class HomePageItemsFunctionality {
 
 	WebDriver driver;
+	
+	public HomePageItemsFunctionality(WebDriver driver) {
+		this.driver = driver;
+	}
 
 	public void addItemWithMaxPriceToCart(WebDriver driver) {
 		List<WebElement> el = driver.findElements(By.xpath("//div[@class='inventory_item_price']"));

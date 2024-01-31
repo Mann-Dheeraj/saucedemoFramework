@@ -20,7 +20,7 @@ public class LoginPageFunctionality {
 	private String passwordIdTEXTFIELD = "password";
 	private String loginBUTTON = "login-button";
 
-	public void navigateToLoginPage(WebDriver driver) throws IOException {
+	public void navigateToLoginPage() throws IOException {
 		driver.manage().window().maximize();
 		
 		String navigateToUrl = Utility.fetchPropertyValue("applicationURL").toString();
@@ -28,19 +28,17 @@ public class LoginPageFunctionality {
 		driver.get(navigateToUrl);
 	}
 
-	public void loginWithEmailAndPassword(WebDriver driver,String username, String password) {
+	public void loginWithEmailAndPassword(String username, String password) {
 		driver.findElement(By.id(emailIdTEXTFIELD)).sendKeys(username);
 		driver.findElement(By.id(passwordIdTEXTFIELD)).sendKeys(password);
 		driver.findElement(By.id(loginBUTTON)).click();
 	}
 	
-	public boolean AssertLoginPageUrl(String loginPageUrl, WebDriver driver) {
+	public boolean AssertLoginPageUrl(String loginPageUrl) {
 		boolean flag = false;
-		System.out.println(driver.getCurrentUrl());
 		if(driver.getCurrentUrl().equalsIgnoreCase(loginPageUrl)) {
 			flag = true;
 		}
-		System.out.println(flag);
 		return flag;
 	}
 	

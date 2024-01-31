@@ -25,8 +25,8 @@ public class HomePageClickOnItemWithMaxPrice extends BaseTest {
 		String usernameOfCustomer = "standard_user";
 		String passwordOfCustomer = "secret_sauce";
 
-		lpf.navigateToLoginPage(driver);
-		lpf.loginWithEmailAndPassword(driver, usernameOfCustomer, passwordOfCustomer);
+		lpf.navigateToLoginPage();
+		lpf.loginWithEmailAndPassword( usernameOfCustomer, passwordOfCustomer);
 //		hpf.addItemWithMaxPriceToCart(driver);
 		hpf.findMaxAndMinPriceItemWithIndex();
 

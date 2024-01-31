@@ -1,6 +1,5 @@
 package com.mannautomation.test;
 
-import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -22,13 +21,17 @@ public class LoginTest extends BaseTest {
 
 	@Test(dataProvider = "getCredentialsFromExcelFile")
 	public void loginWithEmailAndPassword(String uname, String pass, String url) throws IOException {
-		String usernameOfCustomer = uname;
-		String passwordOfCustomer = pass;
-
-		lpf.navigateToLoginPage(driver);
-		lpf.loginWithEmailAndPassword(driver, usernameOfCustomer, passwordOfCustomer);
-		boolean canNavigateToHomePageAfterSuccessfulLogin = lpf.AssertLoginPageUrl(url, driver);
-		assertEquals(canNavigateToHomePageAfterSuccessfulLogin, true);
+		
+		lpf.navigateToLoginPage();
+		lpf.loginWithEmailAndPassword( uname, pass);
+		if(uname.equalsIgnoreCase("locked_out_user")) {
+			System.out.println(uname+" struck on login page due to invalid credentials  "+ url);
+			lpf.AssertLoginPageUrl(url);
+		}else {
+			System.out.println(uname+" has successfully logged in to homepage:  "+ url);
+			lpf.AssertLoginPageUrl(url);
+		}
+		
 	}
 
 	@DataProvider

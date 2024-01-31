@@ -6,7 +6,8 @@
       <class name="com.mannautomation.test.LoginTest">
         <methods>
           <include name="setUp"/>
-          <include name="loginWithEmailAndPassword"/>
+          <include name="setUpReferences"/>
+          <include name="loginWithEmailAndPassword" invocation-numbers="5"/>
         </methods>
       </class> <!-- com.mannautomation.test.LoginTest -->
     </classes>

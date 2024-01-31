@@ -3,7 +3,6 @@ package com.mannautomation.test;
 import java.io.IOException;
 
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.mannautomation.base.BaseTest;
 import com.mannautomation.uicomponents.LoginPageFunctionality;

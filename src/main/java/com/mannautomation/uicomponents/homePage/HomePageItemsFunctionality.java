@@ -1,7 +1,6 @@
 package com.mannautomation.uicomponents.homePage;
 
 import java.math.BigDecimal;
-import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -72,6 +71,5 @@ public class HomePageItemsFunctionality {
 
 	}
 	
-//	(//button[text()='Add to cart' or text()='Remove'])[5]
 
 }

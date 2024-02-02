@@ -5,9 +5,10 @@
     <classes>
       <class name="com.mannautomation.test.HomePageClickOnItemWithMaxPrice">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="findItemWithMaxPrice"/>
           <include name="setUPReference"/>
+          <include name="findItemWithMinAndMaxPrice"/>
         </methods>
       </class> <!-- com.mannautomation.test.HomePageClickOnItemWithMaxPrice -->
     </classes>

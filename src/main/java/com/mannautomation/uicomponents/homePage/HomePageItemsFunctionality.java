@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,40 @@ public class HomePageItemsFunctionality {
 
 	public HomePageItemsFunctionality(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	public void findMinAndMaxPriceBySorting() {
+		List<WebElement> itemsPriceElements = driver.findElements(By.xpath("//div[@class='inventory_item_price']"));
+		List<Float> price = itemsPriceElements.stream().map(p -> Float.parseFloat(p.getText().replace("$", "")))
+		.sorted().collect(Collectors.toList());
+		
+		Float maximumPriceItem = price.get(price.size()-1);
+		String maximumPriceItemXpath = "//div[text()='" + maximumPriceItem + "']";
+		String addCartButtonForMaximumPriceItemXpath = maximumPriceItemXpath + "//following-sibling::button";
+		
+		Float minimumPriceItem = price.get(0);
+		String minimumPriceItemXpath = "//div[text()='" + minimumPriceItem + "']";
+		String addCartButtonForMinimumPriceItemXpath = minimumPriceItemXpath + "//following-sibling::button";
+		
+		driver.findElement(By.xpath(addCartButtonForMinimumPriceItemXpath)).click();
+		driver.findElement(By.xpath(addCartButtonForMaximumPriceItemXpath)).click();
+		
+		
+		
+//		ArrayList<Float> prices = new ArrayList<Float>();
+//		for (WebElement element : elements) {
+//			prices.add(Float.parseFloat(element.getText().replace("$", "")));
+//
+//		}
+//
+//		Collections.sort(prices);
+//
+//		String maxItemPrice = prices.get(prices.size() - 1).toString();
+//		String maxPriceItemXpath = "//div[text()='" + maxItemPrice + "']";
+//		String addCartButtonForMaxPriceItemXpath = maxPriceItemXpath + "//following-sibling::button";
+//
+//		driver.findElement(By.xpath(addCartButtonForMaxPriceItemXpath)).click();
+
 	}
 
 	public void addItemWithMaxPriceToCart() {
@@ -72,24 +107,6 @@ public class HomePageItemsFunctionality {
 
 		driver.findElement(By.xpath("(//button[text()='Add to cart'or text()='Remove'])[" + minPriceItemIndex + "]"))
 				.click();
-
-	}
-
-	public void findMinAndMaxPriceBySorting() {
-		List<WebElement> elements = driver.findElements(By.xpath("//div[@class='inventory_item_price']"));
-		ArrayList<Float> prices = new ArrayList<Float>();
-		for (WebElement element : elements) {
-			prices.add(Float.parseFloat(element.getText().replace("$", "")));
-
-		}
-
-		Collections.sort(prices);
-
-		String maxItemPrice = prices.get(prices.size() - 1).toString();
-		String maxPriceItemXpath = "//div[text()='" + maxItemPrice + "']";
-		String addCartButtonForMaxPriceItemXpath = maxPriceItemXpath + "//following-sibling::button";
-
-		driver.findElement(By.xpath(addCartButtonForMaxPriceItemXpath)).click();
 
 	}
 

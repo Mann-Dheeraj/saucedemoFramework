@@ -60,7 +60,8 @@ public class HomePageItemsFunctionality {
 		System.out.println("Index of most expensive Item on page: " + maxPriceItemIndex);
 		System.out.println("Price of most expensive Item: " + maxPrice);
 
-		driver.findElement(By.xpath("(//button[text()='Add to cart'or text()='Remove'])[" + maxPriceItemIndex + "]")).click();
+		driver.findElement(By.xpath("(//button[text()='Add to cart'or text()='Remove'])[" + maxPriceItemIndex + "]"))
+				.click();
 
 		String itemWithMinPriceTitle = driver
 				.findElement(By.xpath("(//div[@class=\'inventory_item_name \'])[" + minPriceItemIndex + "]")).getText();
@@ -69,27 +70,27 @@ public class HomePageItemsFunctionality {
 		System.out.println("Index of least expensive Item on page: " + minPriceItemIndex);
 		System.out.println("Price of least expensive Item: " + minPrice);
 
-		driver.findElement(By.xpath("(//button[text()='Add to cart'or text()='Remove'])[" + minPriceItemIndex + "]")).click();
+		driver.findElement(By.xpath("(//button[text()='Add to cart'or text()='Remove'])[" + minPriceItemIndex + "]"))
+				.click();
 
 	}
-	
+
 	public void findMinAndMaxPriceBySorting() {
 		List<WebElement> elements = driver.findElements(By.xpath("//div[@class='inventory_item_price']"));
 		ArrayList<Float> prices = new ArrayList<Float>();
-		for(WebElement element: elements) {
+		for (WebElement element : elements) {
 			prices.add(Float.parseFloat(element.getText().replace("$", "")));
-			
+
 		}
-		
+
 		Collections.sort(prices);
-	
-		String maxItemPrice = prices.get(prices.size()-1).toString();
-		String maxPriceItemXpath = "//div[text()='" +maxItemPrice+ "']";
-		String addCartButtonForMaxPriceItemXpath= maxPriceItemXpath+"//following-sibling::button";
+
+		String maxItemPrice = prices.get(prices.size() - 1).toString();
+		String maxPriceItemXpath = "//div[text()='" + maxItemPrice + "']";
+		String addCartButtonForMaxPriceItemXpath = maxPriceItemXpath + "//following-sibling::button";
 
 		driver.findElement(By.xpath(addCartButtonForMaxPriceItemXpath)).click();
-		
+
 	}
-	
 
 }

@@ -27,7 +27,7 @@ public class HomePageClickOnItemWithMaxPrice extends BaseTest {
 
 		lpf.navigateToLoginPage();
 		lpf.loginWithEmailAndPassword( usernameOfCustomer, passwordOfCustomer);
-//		hpf.addItemWithMaxPriceToCart(driver);
+//		hpf.addItemWithMaxPriceToCart();
 //		hpf.findMaxAndMinPriceItemWithIndex();
 		hpf.findMinAndMaxPriceBySorting();
 
